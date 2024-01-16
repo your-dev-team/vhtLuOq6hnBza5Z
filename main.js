@@ -1,16 +1,22 @@
-document.getElementById('timer-form').addEventListener('submit', startTimer);
-document.getElementById('reset-button').addEventListener('click', resetTimer);
+document.getElementById('timer-form').addEventListener('submit', setTimer);
+document.getElementById('start-button').addEventListener('click', startTimer);
+document.getElementById('stop-button').addEventListener('click', stopTimer);
 
 let countDown;
 let timerId;
 
-function startTimer(event) {
+function setTimer(event) {
   event.preventDefault();
   
   const timerInput = document.getElementById('timer-input');
-  countDown = timerInput.value * 60; // 入力は分単位とします。
+  countDown = timerInput.value * 60;
   
-  const countDownDisplay = document.getElementById('countdown-display');
+  document.getElementById('start-button').style.display = 'block';
+}
+
+function startTimer() {
+  const countDownDisplay = document.createElement('div');
+  document.body.appendChild(countDownDisplay);
   
   timerId = setInterval(() => {
     countDown--;
@@ -26,9 +32,7 @@ function startTimer(event) {
   }, 1000);
 }
 
-function resetTimer() {
+function stopTimer() {
   clearInterval(timerId);
-
-  document.getElementById('timer-input').value = '';
-  document.getElementById('countdown-display').textContent = '';
 }
+
