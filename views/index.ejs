@@ -2,15 +2,17 @@
 <html>
 <head>
   <title>Pomodoro Timer</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <h1>Pomodoro Timer</h1>
   <form id="timer-form">
     <input type="number" id="timer-input" required>
-    <button type="submit">Set Timer</button>
+    <button id="start-button">Start</button>
+    <button id="reset-button" type="reset">Reset</button>
   </form>
-  <button id="start-button">Start</button>
+  <div id="countdown-display"></div>
   <script src="/js/main.js"></script>
 </body>
 </html>

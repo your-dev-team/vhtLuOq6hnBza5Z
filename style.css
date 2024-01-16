@@ -1,0 +1,16 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #f4f4f4, #9ddcff);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+#countdown-display {
+  font-size: 1.5rem;
+  color: #333;
+}
